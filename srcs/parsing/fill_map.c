@@ -27,9 +27,28 @@ size_t	ft_count_line(char *argv)
 		str = get_next_line(fd);
 		count++;
 	}
-	printf("ici %ld", count);
 	close(fd);
 	return (count);
+}
+
+char	**ft_remove_nl(char **map)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] == '\n')
+				map[i][j] = 0;
+			j++;
+		}
+		i++;
+	}
+	return (map);
 }
 
 char	**ft_fill_map(char *argv)
@@ -39,7 +58,6 @@ char	**ft_fill_map(char *argv)
 	size_t	i;
 	int		fd;
 
-	printf("ici");
 	fd = open(argv, O_RDONLY);
 	size = ft_count_line(argv);
 	map = malloc(sizeof(char *) * (size + 1));
@@ -50,5 +68,5 @@ char	**ft_fill_map(char *argv)
 		map[i] = get_next_line(fd);
 	map[i] = 0;
 	close(fd);
-	return (map);
+	return(ft_remove_nl(map));
 }

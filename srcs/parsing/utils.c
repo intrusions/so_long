@@ -24,10 +24,6 @@ void	ft_free_map(char **map)
 
 void    ft_print_map(char **map)
 {
-    //for(int i = 0; map[i]; i++)
-	//	printf("%s", map[i]);
-
-	printf("%s", map[0]);
-	printf("%s", map[2]);
-	printf("%s", map[3]);
+    for(int i = 0; i < 6; i++)
+		printf("%s\n", map[i]);
 }

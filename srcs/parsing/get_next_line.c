@@ -27,7 +27,7 @@ char	*ft_get_line(char *stash)
 	tmp = malloc((i + 2) * sizeof(char));
 	if (!tmp)
 		return (NULL);
-	while (j < i)
+	while (j <= i)
 	{
 		tmp[j] = stash[j];
 		j++;

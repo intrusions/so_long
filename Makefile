@@ -1,5 +1,5 @@
 SRCS		=	srcs/so_long.c srcs/parsing/get_next_line.c srcs/parsing/get_next_line_utils.c \
-				srcs/parsing/fill_map.c srcs/parsing/utils.c srcs/parsing/check_wall.c
+				srcs/parsing/fill_map.c srcs/parsing/utils.c srcs/parsing/check_wall.c srcs/parsing/parse_name.c
 
 OBJS		=	$(SRCS:.c=.o)
 

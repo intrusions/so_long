@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse_name.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/14 00:46:28 by xel               #+#    #+#             */
-/*   Updated: 2022/05/14 00:46:28 by xel              ###   ########.fr       */
+/*   Created: 2022/05/14 12:40:05 by xel               #+#    #+#             */
+/*   Updated: 2022/05/14 12:40:05 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+int		ft_parse_name(char *argv)
 {
-	char	**map;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-	if (argc != 2)
-		return (1);
-	if (ft_parse_name(argv[1]))
+	i = 0;
+	str = ".ber";
+	while (argv[i])
 	{
-		map = ft_fill_map(argv[1]);
-		ft_check_wall(map);
-		//ft_print_map(map);
-		//ft_free_map(map);
+		j = 0;
+		while (argv[i] == str[j] && str[j] && argv[i])
+		{
+			i++;
+			j++;
+		}
+		if (!argv[i] && !str[j])
+			return (1);
+		i++;
 	}
+	return (0);
 }
