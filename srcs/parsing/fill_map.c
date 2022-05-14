@@ -39,14 +39,14 @@ char	**ft_remove_nl(char **map)
 	i = 0;
 	while (map[i])
 	{
-		j = 0;
-		while (map[i][j])
-		{
-			if (map[i][j] == '\n')
-				map[i][j] = 0;
-			j++;
-		}
-		i++;
+		 j = 0;
+		 while (map[i][j])
+		 {
+		 	if (map[i][j] == '\n' || map[i][j] == '\r')
+		 		map[i][j] = 0;
+		 	j++;
+		 }
+		 i++;
 	}
 	return (map);
 }

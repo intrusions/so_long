@@ -35,6 +35,7 @@ char	*ft_free(char *str);
 char	**ft_fill_map(char *argv);
 size_t	ft_count_line(char *argv);
 int		ft_check_wall(char **map);
+int		ft_check_wall_size(char **map);
 int		ft_parse_name(char *argv);
 char	**ft_remove_nl(char **map);
 

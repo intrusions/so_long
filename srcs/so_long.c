@@ -21,7 +21,10 @@ int	main(int argc, char **argv)
 	if (ft_parse_name(argv[1]))
 	{
 		map = ft_fill_map(argv[1]);
-		ft_check_wall(map);
+		if (ft_check_wall(map))
+			printf("map is bueno");
+		else
+			printf("no bueno senior");
 		//ft_print_map(map);
 		//ft_free_map(map);
 	}
