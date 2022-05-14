@@ -38,6 +38,11 @@ int		ft_check_wall(char **map);
 int		ft_check_wall_size(char **map);
 int		ft_parse_name(char *argv);
 char	**ft_remove_nl(char **map);
+int		char_is_good(char c);
+int		ft_check_char_map(char **map);
+int		ft_check_collectible(char **map);
+int		ft_check_in_tab(char c, char *tab);
+int		ft_check_collectible_tab(char *tab);
 
 //test part
 void	ft_free_map(char **map);

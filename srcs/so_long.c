@@ -22,10 +22,9 @@ int	main(int argc, char **argv)
 	{
 		map = ft_fill_map(argv[1]);
 		if (ft_check_wall(map))
-			printf("map is bueno");
-		else
-			printf("no bueno senior");
-		//ft_print_map(map);
-		//ft_free_map(map);
+			if (ft_check_char_map(map))
+				if (ft_check_collectible(map))
+					printf("bonne map");
+		ft_free_map(map);
 	}
 }

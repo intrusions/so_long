@@ -22,6 +22,8 @@ int	ft_check_wall_size(char **map)
 	size = 0;
 	while (map[size])
 		size++;
+	if (ft_strlen(map[0]) <= size)
+		return (0);
 	tab = malloc(sizeof(int) * size);
 	if (!tab)
 		return (0);
