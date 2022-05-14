@@ -6,7 +6,7 @@
 /*   By: jucheval <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:52:42 by jucheval          #+#    #+#             */
-/*   Updated: 2022/05/14 21:18:48 by jucheval         ###   ########.fr       */
+/*   Updated: 2022/05/14 23:04:24 by jucheval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,14 @@ int	ft_check_collectible(char **map)
 		while (map[i][j])
 		{
 			if (!ft_check_in_tab(map[i][j], tab))
+			{
 				tab[++k] = map[i][j];
+				tab[k + 1] = 0;
+			}
 			j++;
 		}
 		i++;
 	}
-	tab[++k] = 0;
 	if (ft_check_collectible_tab(tab))
 		return (1);
 	return (0);

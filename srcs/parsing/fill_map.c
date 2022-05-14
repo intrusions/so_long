@@ -39,14 +39,14 @@ char	**ft_remove_nl(char **map)
 	i = 0;
 	while (map[i])
 	{
-		 j = 0;
-		 while (map[i][j])
-		 {
-		 	if (map[i][j] == '\n' || map[i][j] == '\r')
-		 		map[i][j] = 0;
-		 	j++;
-		 }
-		 i++;
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] == '\n' || map[i][j] == '\r')
+				map[i][j] = 0;
+			j++;
+		}
+		i++;
 	}
 	return (map);
 }
@@ -68,5 +68,5 @@ char	**ft_fill_map(char *argv)
 		map[i] = get_next_line(fd);
 	map[i] = 0;
 	close(fd);
-	return(ft_remove_nl(map));
+	return (ft_remove_nl(map));
 }

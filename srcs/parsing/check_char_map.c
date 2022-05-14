@@ -6,13 +6,13 @@
 /*   By: jucheval <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:28:00 by jucheval          #+#    #+#             */
-/*   Updated: 2022/05/14 19:39:50 by jucheval         ###   ########.fr       */
+/*   Updated: 2022/05/14 23:02:14 by jucheval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int		char_is_good(char c)
+int	char_is_good(char c)
 {
 	char	*collectible;
 	size_t	i;
@@ -28,7 +28,7 @@ int		char_is_good(char c)
 	return (0);
 }
 
-int		ft_check_char_map(char **map)
+int	ft_check_char_map(char **map)
 {
 	size_t	i;
 	size_t	j;

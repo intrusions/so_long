@@ -21,10 +21,10 @@ int	main(int argc, char **argv)
 	if (ft_parse_name(argv[1]))
 	{
 		map = ft_fill_map(argv[1]);
-		if (ft_check_wall(map))
-			if (ft_check_char_map(map))
-				if (ft_check_collectible(map))
-					printf("bonne map");
+		if (ft_check_wall(map)
+			&& ft_check_char_map(map)
+			&& ft_check_collectible(map))
+			printf("bonne map");
 		ft_free_map(map);
 	}
 }

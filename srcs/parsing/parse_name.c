@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-int		ft_parse_name(char *argv)
+int	ft_parse_name(char *argv)
 {
 	size_t	i;
 	size_t	j;

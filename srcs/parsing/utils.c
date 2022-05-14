@@ -22,7 +22,7 @@ void	ft_free_map(char **map)
 	free(map);
 }
 
-void    ft_print_map(char **map)
+void	ft_print_map(char **map)
 {
     for(int i = 0; i < 6; i++)
 		printf("%s\n", map[i]);

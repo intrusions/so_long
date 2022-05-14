@@ -21,7 +21,6 @@
 # include <stdio.h>
 # define BUFFER_SIZE 100
 
-
 // gnl part
 size_t	ft_strlen(const char *s);
 int		ft_have_newline(char *str);
@@ -46,9 +45,6 @@ int		ft_check_collectible_tab(char *tab);
 
 //test part
 void	ft_free_map(char **map);
-void    ft_print_map(char **map);
-
-
-
+void	ft_print_map(char **map);
 
 #endif
