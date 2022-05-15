@@ -8,14 +8,19 @@ CC			=	gcc
 
 RM			=	rm -f
 
-CFLAGS		= 	-Wall -Wextra -Werror -I./srcs/includes -g3
+CFLAGS		= 	-Wall -Wextra -Werror -I./srcs/includes
 
 NAME		= 	so_long
+	
+MLX			= 	-Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+
+%.o: %.c
+	$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) 
+	$(CC) $(CFLAGS) $(OBJS) $(MLX) -o $(NAME)	
 
 clean:
 	$(RM) $(OBJS)
