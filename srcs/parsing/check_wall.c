@@ -30,7 +30,7 @@ int	ft_check_wall_size(char **map)
 	return (1);
 }
 
-int	ft_check_wall(char **map)
+int	ft_check_wall(char **map, t_error *errors)
 {
 	size_t	i;
 	size_t	j;
@@ -43,12 +43,15 @@ int	ft_check_wall(char **map)
 		{
 			if (((i == 0 || !map[i + 1]) && (map[i][j] != '1'))
 			|| ((j == 0 || !map[i][j + 1]) && (map[i][j] != '1')))
-				return (0);
+				errors->check_wall = 1;
 			j++;
 		}
 		i++;
 	}
-	if (ft_check_wall_size(map))
+	if (ft_check_wall_size(map) && errors->check_wall == 0)
+		return (0);
+	else if (ft_check_wall_size(map) && errors->check_wall == 1)
 		return (1);
-	return (0);
+	else
+		return (errors->check_rectangle = 1, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: jucheval <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:52:42 by jucheval          #+#    #+#             */
-/*   Updated: 2022/05/14 23:04:24 by jucheval         ###   ########.fr       */
+/*   Updated: 2022/05/18 23:25:44 by jucheval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_check_in_tab(char c, char *tab)
 	return (0);
 }
 
-int	ft_check_collectible(char **map)
+int	ft_check_collectible(char **map, t_error *errors)
 {
 	char	tab[127];
 	size_t	i;
@@ -69,6 +69,6 @@ int	ft_check_collectible(char **map)
 		i++;
 	}
 	if (ft_check_collectible_tab(tab))
-		return (1);
-	return (0);
+		return (0);
+	return (errors->check_collectible = 1, 1);
 }

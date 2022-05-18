@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-int	ft_parse_name(char *argv)
+int	ft_parse_name(char *argv, t_error *errors)
 {
 	size_t	i;
 	size_t	j;
@@ -29,8 +29,8 @@ int	ft_parse_name(char *argv)
 			j++;
 		}
 		if (!argv[i] && !str[j])
-			return (1);
+			return (0);
 		i++;
 	}
-	return (0);
+	return (errors->parse_name = 1, 1);
 }

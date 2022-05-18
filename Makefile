@@ -1,6 +1,8 @@
 SRCS		=	srcs/so_long.c srcs/parsing/get_next_line.c srcs/parsing/get_next_line_utils.c \
 				srcs/parsing/fill_map.c srcs/parsing/utils.c srcs/parsing/check_wall.c srcs/parsing/parse_name.c \
-				srcs/parsing/check_char_map.c srcs/parsing/check_collectible.c
+				srcs/parsing/check_char_map.c srcs/parsing/check_collectible.c \
+				srcs/parsing/print_errors.c
+				
 
 OBJS		=	$(SRCS:.c=.o)
 

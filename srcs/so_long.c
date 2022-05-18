@@ -11,28 +11,23 @@
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <mlx.h>
 
 int	main(int argc, char **argv)
 {
-	char	**map;
-	void	*mlx;
-	void	*mlx_win;
+	char		**map;
+	int			r;
+	t_error		errors;
 
-	if (argc != 2)
-		return (1);
-	if (ft_parse_name(argv[1]))
+	r = 0;
+	ft_initialyze(&errors);
+	if (argc == 2)
 	{
 		map = ft_fill_map(argv[1]);
-		if (ft_check_wall(map) && ft_check_char_map(map) && ft_check_collectible(map))
-		{
-			printf("bonne map");
-			mlx = mlx_init();
-			mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-			mlx_loop(mlx);
-		}
-		else
-			printf("mauvaise map");
+		r += ft_parse_name(argv[1], &errors);
+		r += ft_check_wall(map, &errors);
+		r += ft_check_char_map(map, &errors);
+		r += ft_check_collectible(map, &errors);
+		if (r)
+			return(ft_print_errors(&errors));
 	}
-	ft_free_map(map);
 }
