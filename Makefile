@@ -1,8 +1,11 @@
-SRCS		=	srcs/so_long.c srcs/parsing/get_next_line.c srcs/parsing/get_next_line_utils.c \
-				srcs/parsing/fill_map.c srcs/parsing/utils.c srcs/parsing/check_wall.c srcs/parsing/parse_name.c \
-				srcs/parsing/check_char_map.c srcs/parsing/check_collectible.c \
-				srcs/parsing/print_errors.c
-				
+SRCS		=	srcs/so_long.c									\
+				srcs/parsing/get_next_line.c					\
+				srcs/parsing/get_next_line_utils.c				\
+				srcs/parsing/utils.c							\
+				srcs/parsing/parse_name_and_fill_map.c			\
+				srcs/parsing/check_char_map.c					\
+				srcs/parsing/check_wall_and_collectible.c		\
+				srcs/game/start_game.c							\
 
 OBJS		=	$(SRCS:.c=.o)
 
@@ -10,7 +13,7 @@ CC			=	gcc
 
 RM			=	rm -f
 
-CFLAGS		= 	-Wall -Wextra -Werror -I./srcs/includes
+CFLAGS		= 	-Wall -Wextra -g -I./srcs/includes
 
 NAME		= 	so_long
 	

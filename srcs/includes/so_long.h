@@ -20,17 +20,18 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <mlx.h>
-# define BUFFER_SIZE 100
+# define BUFFER_SIZE 1
 
 // struct
 
 typedef struct s_error
 {
 	int		parse_name;
+	int		invalid_fd;
 	int		check_wall;
 	int		check_char_map;
 	int		check_collectible;
-	int		check_rectangle;
+	int		check_wall_size;
 }	t_error;
 
 // gnl part
@@ -43,7 +44,7 @@ char	*get_next_line(int fd);
 char	*ft_free(char *str);
 
 // parsing part
-char	**ft_fill_map(char *argv);
+char	**ft_fill_map(char *argv, t_error *errors);
 size_t	ft_count_line(char *argv);
 int		ft_check_wall(char **map, t_error *errors);
 int		ft_check_wall_size(char **map);
@@ -54,16 +55,17 @@ int		ft_check_char_map(char **map, t_error *errors);
 int		ft_check_collectible(char **map, t_error *errors);
 int		ft_check_in_tab(char c, char *tab);
 int		ft_check_collectible_tab(char *tab);
-
 int		ft_print_errors(t_error *errors);
 void	ft_initialyze(t_error *errors);
 
+
+// utils
+void	ft_putstr(char *str);
+
 //test part
 void	ft_free_map(char **map);
-void	ft_print_map(char **map);
 
 // play game
-
 int	start_game(char **map);
 
 #endif
