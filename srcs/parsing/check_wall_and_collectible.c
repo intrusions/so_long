@@ -97,6 +97,7 @@ int	ft_check_wall(char **map, t_error *errors)
 	size_t	j;
 
 	i = 0;
+	j = 0;
 	while (map[i])
 	{
 		j = 0;
@@ -109,6 +110,8 @@ int	ft_check_wall(char **map, t_error *errors)
 		}
 		i++;
 	}
+	errors->width_map = i;
+	errors->height_map = j;
 	if (ft_check_wall_size(map) && errors->check_wall == 0)
 		return (0);
 	else if (ft_check_wall_size(map) && errors->check_wall == 1)

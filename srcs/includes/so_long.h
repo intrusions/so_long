@@ -31,6 +31,8 @@ typedef struct s_error
 	int		check_char_map;
 	int		check_collectible;
 	int		check_wall_size;
+	int		width_map;
+	int		height_map;
 }	t_error;
 
 // struct to manage gamers
@@ -48,7 +50,6 @@ typedef struct s_data
 	int		width_map;
 	int		height_map;
 }	t_data;
-
 
 // gnl part
 size_t	ft_strlen(const char *s);
@@ -74,14 +75,14 @@ int		ft_check_collectible_tab(char *tab);
 int		ft_print_errors(t_error *errors);
 void	ft_initialyze(t_error *errors);
 
-
 // utils
 void	ft_putstr(char *str);
 void	ft_free_map(char **map);
 
-
 // play game
-int	start_game(char **map);
-
+int		start_game(char **map, t_error *errors);
+void	ft_display_map(t_data *data, char **map);
+void	ft_display_map_choice(t_data *data, char **map, int i, int j);
+void	ft_initialyze_img(t_data *data, t_error *errors);
 
 #endif

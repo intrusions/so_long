@@ -50,7 +50,7 @@ int	ft_print_errors(t_error *errors)
 	if (errors->check_wall)
 		ft_putstr("- Walls need to completely frame the map\n");
 	if (errors->check_char_map)
-		ft_putstr("- One or more unauthorized characters are present in the map\n");
+		ft_putstr("- Unauthorized characters are present in themap\n");
 	if (errors->check_collectible)
 		ft_putstr("- Collectibles are not present in the map\n");
 	if (errors->check_wall_size)

@@ -12,7 +12,6 @@
 
 #include "so_long.h"
 
-
 int	main(int argc, char **argv)
 {
 	char		**map;
@@ -28,14 +27,14 @@ int	main(int argc, char **argv)
 		{
 			map = ft_fill_map(argv[1], &errors);
 			if (!map)
-				return (ft_print_errors(&errors), 0);				
+				return (ft_print_errors(&errors), 0);
 			r += ft_check_wall(map, &errors);
 			r += ft_check_char_map(map, &errors);
 			r += ft_check_collectible(map, &errors);
 			if (r)
 				return (free(map), ft_print_errors(&errors));
 			else
-				start_game(map);
+				start_game(map, &errors);
 		}
 	}
 }
