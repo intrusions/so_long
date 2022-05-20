@@ -22,8 +22,7 @@
 # include <mlx.h>
 # define BUFFER_SIZE 1
 
-// struct
-
+// struct to manage parsing error
 typedef struct s_error
 {
 	int		parse_name;
@@ -33,6 +32,23 @@ typedef struct s_error
 	int		check_collectible;
 	int		check_wall_size;
 }	t_error;
+
+// struct to manage gamers
+typedef struct s_data
+{
+	void	*mlx;
+	void	*mlx_win;
+	void	*collec_ptr;
+	void	*exit_ptr;
+	void	*log_ptr;
+	void	*wall_ptr;
+	void	*player_ptr;
+	int		width;
+	int		height;
+	int		width_map;
+	int		height_map;
+}	t_data;
+
 
 // gnl part
 size_t	ft_strlen(const char *s);
@@ -61,11 +77,11 @@ void	ft_initialyze(t_error *errors);
 
 // utils
 void	ft_putstr(char *str);
-
-//test part
 void	ft_free_map(char **map);
+
 
 // play game
 int	start_game(char **map);
+
 
 #endif
