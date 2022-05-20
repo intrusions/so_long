@@ -6,6 +6,8 @@ SRCS		=	srcs/so_long.c									\
 				srcs/parsing/check_char_map.c					\
 				srcs/parsing/check_wall_and_collectible.c		\
 				srcs/game/start_game.c							\
+				srcs/game/ft_move.c								\
+				srcs/game/utils.c								\
 
 OBJS		=	$(SRCS:.c=.o)
 

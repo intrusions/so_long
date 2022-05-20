@@ -12,6 +12,30 @@
 
 #include "so_long.h"
 
+int	ft_one_player(char **map)
+{
+	size_t	i;
+	size_t	j;
+	size_t	r;
+
+	i = 0;
+	r = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] == 'P')
+				r++;
+			j++;
+		}
+		i++;
+	}
+	if (r == 1)
+		return (1);
+	return (0);
+}
+
 int	char_is_good(char c)
 {
 	char	*collectible;

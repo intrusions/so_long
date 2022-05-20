@@ -49,6 +49,7 @@ typedef struct s_data
 	int		height;
 	int		width_map;
 	int		height_map;
+	char	**map;
 }	t_data;
 
 // gnl part
@@ -78,11 +79,20 @@ void	ft_initialyze(t_error *errors);
 // utils
 void	ft_putstr(char *str);
 void	ft_free_map(char **map);
+void	ft_swap(char *a, char *b);
+int		ft_one_player(char **map);
+int		ft_ready_to_exit(t_data *data);
+int		ft_clean_before_exit(t_data *data);
 
 // play game
 int		start_game(char **map, t_error *errors);
-void	ft_display_map(t_data *data, char **map);
-void	ft_display_map_choice(t_data *data, char **map, int i, int j);
+void	ft_display_map(t_data *data);
+void	ft_display_map_choice(t_data *data, size_t i, size_t j);
 void	ft_initialyze_img(t_data *data, t_error *errors);
+int		ft_loop_move(int keycode, t_data *data);
+void	ft_move_right(t_data *data);
+void	ft_move_left(t_data *data);
+void	ft_move_top(t_data *data);
+void	ft_move_bot(t_data *data);
 
 #endif

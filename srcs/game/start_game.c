@@ -28,36 +28,36 @@ void	ft_initialyze_img(t_data *data, t_error *errors)
 	data->width_map = errors->width_map;
 }
 
-void	ft_display_map_choice(t_data *data, char **map, int i, int j)
+void	ft_display_map_choice(t_data *data, size_t i, size_t j)
 {
-	if (map[i][j] == '1')
+	if (data->map[i][j] == '1')
 		mlx_put_image_to_window(data->mlx,
 			data->mlx_win, data->wall_ptr, (j * 64), (i * 64));
-	else if (map[i][j] == '0')
+	else if (data->map[i][j] == '0')
 		mlx_put_image_to_window(data->mlx,
 			data->mlx_win, data->log_ptr, (j * 64), (i * 64));
-	else if (map[i][j] == 'E')
+	else if (data->map[i][j] == 'E')
 		mlx_put_image_to_window(data->mlx,
 			data->mlx_win, data->exit_ptr, (j * 64), (i * 64));
-	else if (map[i][j] == 'C')
+	else if (data->map[i][j] == 'C')
 		mlx_put_image_to_window(data->mlx,
 			data->mlx_win, data->collec_ptr, (j * 64), (i * 64));
-	else if (map[i][j] == 'P')
+	else if (data->map[i][j] == 'P')
 		mlx_put_image_to_window(data->mlx,
 			data->mlx_win, data->player_ptr, (j * 64), (i * 64));
 }
 
-void	ft_display_map(t_data *data, char **map)
+void	ft_display_map(t_data *data)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
-	while (map[i])
+	while (data->map[i])
 	{
 		j = -1;
-		while (map[i][++j])
-			ft_display_map_choice(data, map, i, j);
+		while (data->map[i][++j])
+			ft_display_map_choice(data, i, j);
 		i++;
 	}
 }
@@ -66,11 +66,13 @@ int	start_game(char **map, t_error *errors)
 {
 	t_data	data;
 
+	data.map = map;
 	data.mlx = mlx_init();
 	ft_initialyze_img(&data, errors);
 	data.mlx_win = mlx_new_window(data.mlx, data.height_map * 64,
 			data.width_map * 64, "so_long");
-	ft_display_map(&data, map);
+	ft_display_map(&data);
+	mlx_key_hook(data.mlx_win, ft_loop_move, &data);
 	mlx_loop(data.mlx);
 	return (0);
 }

@@ -68,7 +68,7 @@ int	ft_check_collectible(char **map, t_error *errors)
 		}
 		i++;
 	}
-	if (ft_check_collectible_tab(tab))
+	if (ft_check_collectible_tab(tab) && ft_one_player(map))
 		return (0);
 	return (errors->check_collectible = 1, 1);
 }
