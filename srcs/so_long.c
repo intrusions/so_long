@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 			r += ft_check_char_map(map, &errors);
 			r += ft_check_collectible(map, &errors);
 			if (r)
-				return (free(map), ft_print_errors(&errors));
+				return (ft_free_map(map), ft_print_errors(&errors));
 			else
 				start_game(map, &errors);
 		}

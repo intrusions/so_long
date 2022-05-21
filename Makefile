@@ -15,7 +15,7 @@ CC			=	gcc
 
 RM			=	rm -f
 
-CFLAGS		= 	-Wall -Wextra -g -I./srcs/includes
+CFLAGS		= 	-Wall -Wextra -Werror -I./srcs/includes
 
 NAME		= 	so_long
 	

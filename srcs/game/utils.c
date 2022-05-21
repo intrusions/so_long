@@ -14,18 +14,28 @@
 
 void	ft_swap(char *a, char *b)
 {
-	char tmp;
+	char	tmp;
 
 	tmp = *a;
 	*a = *b;
 	*b = tmp;
 }
 
+void	ft_free_map(char **map)
+{
+	size_t	i;
+
+	i = -1;
+	while (map[++i])
+		free(map[i]);
+	free(map);
+}
+
 int	ft_ready_to_exit(t_data *data)
 {
 	size_t	i;
 	size_t	j;
-	
+
 	i = 0;
 	while (data->map[i])
 	{
@@ -41,17 +51,9 @@ int	ft_ready_to_exit(t_data *data)
 	return (1);
 }
 
-int		ft_clean_before_exit(t_data *data)
+int	ft_clean_before_exit(t_data *data)
 {
-	size_t	i;
-
-	i = 0;
-	while (data->map[i])
-	{
-		free(data->map[i]);
-		i++;
-	}
-	free(data->map);
+	ft_free_map(data->map);
 	mlx_destroy_window(data->mlx, data->mlx_win);
 	mlx_destroy_image(data->mlx, data->collec_ptr);
 	mlx_destroy_image(data->mlx, data->exit_ptr);
