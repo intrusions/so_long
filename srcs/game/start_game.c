@@ -66,6 +66,7 @@ int	start_game(char **map, t_error *errors)
 {
 	t_data	data;
 
+	data.step = 0;
 	data.map = map;
 	data.mlx = mlx_init();
 	ft_initialyze_img(&data, errors);

@@ -53,6 +53,8 @@ int	ft_ready_to_exit(t_data *data)
 
 int	ft_clean_before_exit(t_data *data)
 {
+	ft_putnbr(data->step);
+	ft_putchar('\n');
 	ft_free_map(data->map);
 	mlx_destroy_window(data->mlx, data->mlx_win);
 	mlx_destroy_image(data->mlx, data->collec_ptr);

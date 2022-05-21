@@ -50,6 +50,7 @@ typedef struct s_data
 	int		width_map;
 	int		height_map;
 	char	**map;
+	int		step;
 }	t_data;
 
 // gnl part
@@ -77,7 +78,9 @@ int		ft_print_errors(t_error *errors);
 void	ft_initialyze(t_error *errors);
 
 // utils
+void	ft_putchar(char c);
 void	ft_putstr(char *str);
+void	ft_putnbr(int nb);
 void	ft_free_map(char **map);
 void	ft_swap(char *a, char *b);
 int		ft_one_player(char **map);
