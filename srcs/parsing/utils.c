@@ -59,6 +59,9 @@ void	ft_putnbr(int nb)
 
 int	ft_print_errors(t_error *errors)
 {
+	ft_putstr("Error\n");
+	if (errors->empty_map)
+		ft_putstr("- Map is empty\n");
 	if (errors->open_error)
 		ft_putstr("- File can't be open\n");
 	if (errors->parse_file)

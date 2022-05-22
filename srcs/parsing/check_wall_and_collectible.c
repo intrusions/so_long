@@ -73,16 +73,18 @@ int	ft_check_collectible(char **map, t_error *errors)
 	return (errors->check_collectible = 1, 1);
 }
 
-int	ft_check_wall_size(char **map)
+int	ft_check_wall_size(char **map, t_error *errors)
 {
 	size_t	i;
 	size_t	size;
 
 	i = 0;
 	size = 0;
+	if (!map || !map[0] || !map[0][0])
+		return (errors->empty_map = 1, 0);
 	while (map[size])
 		size++;
-	if (ft_strlen(map[0]) <= size)
+	if (ft_strlen(map[0]) < size)
 		return (0);
 	i = -1;
 	while (++i < (size - 1))
@@ -112,9 +114,9 @@ int	ft_check_wall(char **map, t_error *errors)
 	}
 	errors->width_map = i;
 	errors->height_map = j;
-	if (ft_check_wall_size(map) && errors->check_wall == 0)
+	if (ft_check_wall_size(map, errors) && errors->check_wall == 0)
 		return (0);
-	else if (ft_check_wall_size(map) && errors->check_wall == 1)
+	else if (ft_check_wall_size(map, errors) && errors->check_wall == 1)
 		return (1);
 	else
 		return (errors->check_wall_size = 1, 1);
