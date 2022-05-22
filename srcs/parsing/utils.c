@@ -14,6 +14,7 @@
 
 void	ft_initialyze(t_error *errors)
 {
+	errors->empty_map = 0;
 	errors->open_error = 0;
 	errors->parse_file = 0;
 	errors->parse_name = 0;
@@ -75,7 +76,7 @@ int	ft_print_errors(t_error *errors)
 	if (errors->check_char_map)
 		ft_putstr("- Unauthorized characters are present in themap\n");
 	if (errors->check_collectible)
-		ft_putstr("- Collectibles / Players are not present in the map\n");
+		ft_putstr("- Collectibles/Players are not/most present in the map\n");
 	if (errors->check_wall_size)
 		ft_putstr("- Map are not rectangle\n");
 	return (0);

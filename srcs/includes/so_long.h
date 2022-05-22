@@ -69,7 +69,7 @@ char	*ft_free(char *str);
 char	**ft_fill_map(char *argv, t_error *errors);
 size_t	ft_count_line(char *argv);
 int		ft_check_wall(char **map, t_error *errors);
-int		ft_check_wall_size(char **map, t_error *errors);
+int		ft_check_wall_size(char **map);
 int		ft_parse_name(char *argv, t_error *errors);
 char	**ft_remove_nl(char **map);
 int		char_is_good(char c);
