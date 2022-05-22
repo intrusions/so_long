@@ -74,6 +74,7 @@ int	start_game(char **map, t_error *errors)
 			data.width_map * 64, "so_long");
 	ft_display_map(&data);
 	mlx_key_hook(data.mlx_win, ft_loop_move, &data);
+	mlx_hook(data.mlx_win, 17, 0, &ft_clean_before_exit, &data);
 	mlx_loop(data.mlx);
 	return (0);
 }
