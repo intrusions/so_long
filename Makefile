@@ -15,18 +15,19 @@ CC			=	gcc
 
 RM			=	rm -f
 
-CFLAGS		= 	-Wall -Wextra -I./srcs/includes
+CFLAGS		= 	-Wall -Wextra -Werror -g3 -I./srcs/includes
 
 NAME		= 	so_long
 	
 MLX			= 	-Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -O3 -c $< -o $@
+	$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -c $< -o $@
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
+	@make -C ./mlx_linux
 	$(CC) $(CFLAGS) $(OBJS) $(MLX) -o $(NAME)	
 
 clean:

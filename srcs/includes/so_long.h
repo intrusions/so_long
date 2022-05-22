@@ -78,7 +78,7 @@ int		ft_print_errors(t_error *errors);
 void	ft_initialyze(t_error *errors);
 
 // utils
-void	ft_putchar(char c);
+void	ft_putchar(int c);
 void	ft_putstr(char *str);
 void	ft_putnbr(int nb);
 void	ft_free_map(char **map);

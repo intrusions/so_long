@@ -22,7 +22,7 @@ void	ft_initialyze(t_error *errors)
 	errors->check_wall_size = 0;
 }
 
-void	ft_putchar(char c)
+void	ft_putchar(int c)
 {
 	write(1, &c, 1);
 }

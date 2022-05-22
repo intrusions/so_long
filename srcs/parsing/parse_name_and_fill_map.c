@@ -88,10 +88,9 @@ char	**ft_fill_map(char *argv, t_error *errors)
 	map = malloc(sizeof(char *) * (size + 1));
 	if (!map)
 		return (NULL);
-	i = -1;
-	while (++i < size)
-		map[i] = get_next_line(fd);
-	map[i] = 0;
+	i = 0;
+	while (i <= size)
+		map[i++] = get_next_line(fd);
 	close(fd);
 	return (ft_remove_nl(map));
 }

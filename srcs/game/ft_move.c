@@ -41,14 +41,14 @@ void	ft_move_right(t_data *data)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	while (data->map[i])
+	i = 1;
+	while (data->map[i + 1])
 	{
-		j = 0;
-		while (data->map[i][j])
+		j = 1;
+		while (data->map[i][j + 1])
 		{
 			if (data->map[i][j] == 'P' && data->map[i][j + 1] != '1'
-			&& data->map[i][j + 1] != 'E' && data->step++)
+			&& data->map[i][j + 1] != 'E' && ++data->step)
 			{
 				if (data->map[i][j + 1] == 'C')
 					data->map[i][j + 1] = '0';
@@ -57,7 +57,7 @@ void	ft_move_right(t_data *data)
 				return ;
 			}
 			else if (data->map[i][j] == 'P' && data->map[i][j + 1] == 'E'
-			&& ft_ready_to_exit(data) && data->step++)
+			&& ft_ready_to_exit(data) && ++data->step)
 				ft_clean_before_exit(data);
 			j++;
 		}
@@ -70,14 +70,14 @@ void	ft_move_left(t_data *data)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	while (data->map[i])
+	i = 1;
+	while (data->map[i + 1])
 	{
-		j = 0;
-		while (data->map[i][j])
+		j = 1;
+		while (data->map[i][j + 1])
 		{
 			if (data->map[i][j] == 'P' && data->map[i][j - 1] != '1'
-			&& data->map[i][j - 1] != 'E' && data->step++)
+			&& data->map[i][j - 1] != 'E' && ++data->step)
 			{
 				if (data->map[i][j - 1] == 'C')
 					data->map[i][j - 1] = '0';
@@ -86,7 +86,7 @@ void	ft_move_left(t_data *data)
 				return ;
 			}
 			else if (data->map[i][j] == 'P' && data->map[i][j - 1] == 'E'
-			&& ft_ready_to_exit(data) && data->step++)
+			&& ft_ready_to_exit(data) && ++data->step)
 				ft_clean_before_exit(data);
 			j++;
 		}
@@ -99,14 +99,14 @@ void	ft_move_top(t_data *data)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	while (data->map[i])
+	i = 1;
+	while (data->map[i + 1])
 	{
-		j = 0;
-		while (data->map[i][j])
+		j = 1;
+		while (data->map[i][j + 1])
 		{
 			if (data->map[i][j] == 'P' && data->map[i - 1][j] != '1'
-			&& data->map[i - 1][j] != 'E' && data->step++)
+			&& data->map[i - 1][j] != 'E' && ++data->step)
 			{
 				if (data->map[i - 1][j] == 'C')
 					data->map[i - 1][j] = '0';
@@ -115,7 +115,7 @@ void	ft_move_top(t_data *data)
 				return ;
 			}
 			else if (data->map[i][j] == 'P' && data->map[i - 1][j] == 'E'
-			&& ft_ready_to_exit(data) && data->step++)
+			&& ft_ready_to_exit(data) && ++data->step)
 				ft_clean_before_exit(data);
 			j++;
 		}
@@ -128,14 +128,14 @@ void	ft_move_bot(t_data *data)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	while (data->map[i])
+	i = 1;
+	while (data->map[i + 1])
 	{
-		j = 0;
-		while (data->map[i][j])
+		j = 1;
+		while (data->map[i][j + 1])
 		{
 			if (data->map[i][j] == 'P' && data->map[i + 1][j] != '1'
-			&& data->map[i + 1][j] != 'E' && data->step++)
+			&& data->map[i + 1][j] != 'E' && ++data->step)
 			{
 				if (data->map[i + 1][j] == 'C')
 					data->map[i + 1][j] = '0';
@@ -144,7 +144,7 @@ void	ft_move_bot(t_data *data)
 				return ;
 			}
 			else if (data->map[i][j] == 'P' && data->map[i + 1][j] == 'E'
-			&& ft_ready_to_exit(data) && data->step++)
+			&& ft_ready_to_exit(data) && ++data->step)
 				ft_clean_before_exit(data);
 			j++;
 		}

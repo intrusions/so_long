@@ -25,9 +25,9 @@ void	ft_free_map(char **map)
 {
 	size_t	i;
 
-	i = -1;
-	while (map[++i])
-		free(map[i]);
+	i = 0;
+	while (map[i])
+		free(map[i++]);
 	free(map);
 }
 
@@ -36,11 +36,11 @@ int	ft_ready_to_exit(t_data *data)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	while (data->map[i])
+	i = 1;
+	while (data->map[i + 1])
 	{
-		j = 0;
-		while (data->map[i][j])
+		j = 1;
+		while (data->map[i][j + 1])
 		{
 			if (data->map[i][j] == 'C')
 				return (0);
