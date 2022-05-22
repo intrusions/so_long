@@ -50,7 +50,6 @@ char	*ft_get_stash(char *stash)
 	if (!stash[i])
 		return (ft_free(stash));
 	int O = (ft_strlen(stash) - i);
-	printf("-> %d |%d| - %s", O, ft_have_newline(stash), stash);
 	tmp = malloc(O * sizeof(char));
 	if (!tmp)
 		return (ft_free(stash));
