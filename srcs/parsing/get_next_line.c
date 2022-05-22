@@ -49,8 +49,7 @@ char	*ft_get_stash(char *stash)
 		i++;
 	if (!stash[i])
 		return (ft_free(stash));
-	int O = (ft_strlen(stash) - i);
-	tmp = malloc(O * sizeof(char));
+	tmp = malloc((ft_strlen(stash) - i) * sizeof(char));
 	if (!tmp)
 		return (ft_free(stash));
 	j = i + 1;

@@ -25,7 +25,9 @@
 // struct to manage parsing error
 typedef struct s_error
 {
+	int		open_error;
 	int		parse_name;
+	int		parse_file;
 	int		invalid_fd;
 	int		check_wall;
 	int		check_char_map;
@@ -76,6 +78,7 @@ int		ft_check_in_tab(char c, char *tab);
 int		ft_check_collectible_tab(char *tab);
 int		ft_print_errors(t_error *errors);
 void	ft_initialyze(t_error *errors);
+int		ft_parse_file(char *argv, t_error *errors);
 
 // utils
 void	ft_putchar(int c);

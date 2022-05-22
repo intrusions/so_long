@@ -23,6 +23,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		r += ft_parse_name(argv[1], &errors);
+		r += ft_parse_file(argv[1], &errors);
 		if (!r)
 		{
 			map = ft_fill_map(argv[1], &errors);
@@ -36,5 +37,6 @@ int	main(int argc, char **argv)
 			else
 				start_game(map, &errors);
 		}
+		return (ft_print_errors(&errors));
 	}
 }

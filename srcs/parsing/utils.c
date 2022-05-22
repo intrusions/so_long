@@ -14,6 +14,8 @@
 
 void	ft_initialyze(t_error *errors)
 {
+	errors->open_error = 0;
+	errors->parse_file = 0;
 	errors->parse_name = 0;
 	errors->invalid_fd = 0;
 	errors->check_wall = 0;
@@ -57,6 +59,10 @@ void	ft_putnbr(int nb)
 
 int	ft_print_errors(t_error *errors)
 {
+	if (errors->open_error)
+		ft_putstr("- File can't be open\n");
+	if (errors->parse_file)
+		ft_putstr("- File doesn't exist or is a folder\n");
 	if (errors->parse_name)
 		ft_putstr("- File names are not ending by a \".ber\"\n");
 	if (errors->invalid_fd)

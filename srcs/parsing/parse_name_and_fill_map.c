@@ -12,6 +12,17 @@
 
 #include "so_long.h"
 
+int	ft_parse_file(char *argv, t_error *errors)
+{
+	int		fd;
+	char	buffer[1];
+
+	fd = open(argv, O_RDONLY);
+	if (read(fd, buffer, 1) < 0)
+		return (close(fd), errors->parse_file = 1, 1);
+	return (0);
+}
+
 int	ft_parse_name(char *argv, t_error *errors)
 {
 	size_t	i;
@@ -83,7 +94,7 @@ char	**ft_fill_map(char *argv, t_error *errors)
 
 	fd = open(argv, O_RDONLY);
 	if (fd < 0)
-		return (errors->invalid_fd = 1, NULL);
+		return (errors->open_error = 1, NULL);
 	size = ft_count_line(argv);
 	map = malloc(sizeof(char *) * (size + 1));
 	if (!map)
